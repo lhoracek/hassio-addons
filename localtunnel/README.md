@@ -4,7 +4,7 @@ I'm not creator of `localtunnel.me`. All Your traffic can be eavesdropped by the
 
 ## About
 
-TFork of serveo.net addon modified to allow suport for localtunnel.me
+Fork of serveo.net addon modified to allow suport for localtunnel.me
 
 You **DO NOT** need to:
 
