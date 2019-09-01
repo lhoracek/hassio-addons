@@ -13,33 +13,13 @@ then
     SUBDOMAIN=" --subdomain {ALIAS}"
 fi
 
-if [ "${ALIAS}" == "" ]
+if [ "${SERVER}" == "" ]
 then
-    HOST=" --host http://sub.example.tld:1234 {SERVER}"
+    HOST=" --host ${SERVER}"
 fi
 
+CMD="/bin/bash -c 'sleep ${RETRY_TIME} && lt ${HOST} --port ${LOCALPORT} {SUBDOMAIN} --local-host homeassistant"
 
+echo "Running '${CMD}' locally!"
 
-
-CMD="/bin/bash -c 'sleep ${RETRY_TIME} && lt ${HOST} --port ${LOCALPORT} {SUBDOMAIN}"
-
-echo "Running '${CMD}' through supervisor!"
-
-cat > /etc/supervisor-docker.conf << EOL
-[supervisord]
-user=root
-nodaemon=true
-logfile=/dev/null
-logfile_maxbytes=0
-EOL
-cat >> /etc/supervisor-docker.conf << EOL
-[program:serveo]
-command=${CMD}
-autostart=true
-autorestart=true
-stdout_logfile=/dev/fd/1
-stdout_logfile_maxbytes=0
-redirect_stderr=true
-EOL
-
-exec supervisord -c /etc/supervisor-docker.conf
+exec CMD

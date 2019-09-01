@@ -1,10 +1,10 @@
-ARG BUILD_FROM
+ARG BUILD_FROM="efrecon/localtunnel"
 FROM $BUILD_FROM
 
 ENV LANG C.UTF-8
 
 # Install requirements for add-on
-RUN apk add --no-cache jq autossh supervisor node
+RUN apk add --no-cache jq autossh supervisor nodejs npm
 
 # Copy data for add-on
 COPY run.sh /
