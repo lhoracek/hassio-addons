@@ -1,6 +1,6 @@
 {
-  "name": "Localtunnel Free Reverse SSL Proxy",
-  "version": "0.1",
+  "name": "Localtunnel Free Proxy",
+  "version": "0.1.1",
   "slug": "localtunnel",
   "description": "Expose Your hassio to the internet through SSL/HTTPS with one click thanks to https://localtunnel.github.io.",
   "url": "https://github.com/lhoracek/hassio-addons/tree/master/localtunnel",
@@ -9,7 +9,7 @@
   "boot": "auto",
   "host_network": true,
   "options": {
-    "alias": null,
+    "alias": "hassio",
     "server": null,
     "localport": 80,
     "retry_time": 15

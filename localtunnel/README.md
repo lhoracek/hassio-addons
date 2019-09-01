@@ -33,17 +33,13 @@ You **DO NOT** need to:
 ## Config params
 
 `alias` - subdomain of your choosing, required even if domain is defined
-
 `server` - in case you are using Your own localtunnel.me instance, put it's hostname here
-
 `localport` - local hassio port to forward from, default `8123` forwards frontend service
-
 `retry_time` - seconds to wait before retrying to reconnect to serveo in case of connection error, please be patient sometimes serveo.net can be down or Your provider can have problems with hostname resolution
 
 ## Example configuration
 
-1. Easiest config, expose only frontend:
-
+1. Simple config
 ```json
 {
     "alias": "myfancysubdomain",
@@ -52,5 +48,3 @@ You **DO NOT** need to:
     "retry_time": 15
 }
 ```
-
-2. Other examples can be added via PR's :)
