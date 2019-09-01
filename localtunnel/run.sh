@@ -8,12 +8,12 @@ SERVER="$(jq --raw-output '.server' $CONFIG_PATH)"
 LOCALPORT="$(jq --raw-output '.localport' $CONFIG_PATH)"
 RETRY_TIME="$(jq --raw-output '.retry_time' $CONFIG_PATH)"
 
-if [ "${ALIAS}" == "" ]
+if [ "${ALIAS}" != "" ]
 then
     SUBDOMAIN=" --subdomain {ALIAS}"
 fi
 
-if [ "${SERVER}" == "" ]
+if [ "${SERVER}" != "" ]
 then
     HOST=" --host ${SERVER}"
 fi
