@@ -1,6 +1,6 @@
 {
   "name": "Autossh",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "slug": "autossh",
   "description": "Updated Autossh to suport autorestarting whoel autossh when fails",
   "url": "https://github.com/lhoracek/hassio-addons",
