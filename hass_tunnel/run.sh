@@ -55,7 +55,7 @@ command_args="${command_args} ${OTHER_SSH_OPTIONS}"
 echo "[INFO] command args: ${command_args}"
 # start autossh
 
-while :; do
+while true; do
   echo "[INFO] running autossh"
   /usr/bin/autossh ${command_args}
 done
