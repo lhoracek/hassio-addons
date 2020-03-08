@@ -1,8 +1,8 @@
 {
   "name": "Autossh",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "slug": "autossh",
-  "description": "Automatically connect to a ssh server for forwarding ports",
+  "description": "Updated Autossh to suport autorestarting whoel autossh when fails",
   "url": "https://github.com/pjcarly/hassio-addons",
   "arch": ["armv7", "armhf", "amd64", "aarch64", "i386"],
   "startup": "application",
