@@ -58,5 +58,6 @@ echo "[INFO] command args: ${command_args}"
 while true; do
   echo "[INFO] running autossh"
   /usr/bin/autossh ${command_args}
+  sleep 30
 done
 
