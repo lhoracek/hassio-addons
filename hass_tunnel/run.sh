@@ -44,20 +44,19 @@ if [ ! -z "$LOCAL_FORWARDING" ]; then
   done <<< "$LOCAL_FORWARDING"
 fi
 
-echo "[INFO] testing ssh connection"
-ssh -o StrictHostKeyChecking=no -p $SSH_PORT $HOSTNAME 2>/dev/null || true
-
-echo "[INFO] listing host keys"
-ssh-keyscan -p $SSH_PORT $HOSTNAME || true
-
 command_args="${command_args} ${OTHER_SSH_OPTIONS}"
 
 echo "[INFO] command args: ${command_args}"
 # start autossh
 
 while true; do
+  echo "[INFO] testing ssh connection"
+  ssh -o StrictHostKeyChecking=no -p $SSH_PORT $HOSTNAME 2>/dev/null || true
+
+  echo "[INFO] listing host keys"
+  ssh-keyscan -p $SSH_PORT $HOSTNAME || true
+
   echo "[INFO] running autossh"
   /usr/bin/autossh ${command_args}
   sleep 30
 done
-
